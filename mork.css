@@ -1,0 +1,291 @@
+/* FONTER
+font-family: 'Mali', cursive;
+font-family: 'Monoton', cursive;
+font-family: 'Luckiest Guy', cursive;
+font-family: 'Notable', sans-serif;
+font-family: 'Fugaz One', cursive;
+*/
+
+body{
+    margin: 0;
+    background-color: #1e1e1e;
+}
+
+/*--------Hamburger-meny-----------*/
+nav {
+    font-family: 'Mali', cursive;
+}
+
+#menyKnapp:hover {
+    cursor: pointer;
+}
+
+p img {
+    height: 2em;
+    position: relative;
+    top: 8px;
+}
+
+#tekst-meny{
+    background-color: rgb(71, 219, 175);
+}
+
+.skjultMeny {
+    display: none;
+}
+
+.vistMeny {
+        position: relative;
+        left: 30px;
+        animation-duration: 1s;
+        animation-name: slidein;
+      }
+      
+      @keyframes slidein {
+        from {
+          left: -15%;
+          width: -150%; 
+        }
+      
+        75% {
+          margin-left: 5%;
+          width: 150%;
+        }
+      
+        to {
+          margin-left: 0%;
+          width: 100%;
+          left: 30px;
+        }
+      }
+      
+    
+/*------------------Grid-----------------*/
+article h2 {grid-area: header;}
+.datoClass {grid-area: dato;}
+.genreClass {grid-area: genre;}
+.eventIkon {grid-area: ikon;}
+.prisClass {grid-area: pris;}
+.infoClass {grid-area: info;}
+.bildeClass {grid-area: bilde;}
+aside {grid-area: aside;}
+
+article{
+    display: grid;
+    padding: 5px;
+    grid-template-areas: 
+        'header header header'
+        'dato dato bilde'
+        'genre ikon bilde'
+        'pris ingenting info';
+    border-top: 3px solid rgb(71, 219, 175);
+    
+}
+
+/*--------------------Header-----------------*/
+h1{
+    text-align: center;
+    font-family: 'Notable', sans-serif;
+    font-size: 2.5em;
+    transition: 2s;
+    color: rgb(71, 219, 175);
+}
+
+h1:hover {
+    font-size: 3em;
+    transition: 2s;
+    color: rgb(71, 219, 175);
+    text-shadow: 2px 2px 8px lightgray;
+}
+
+/*----------------Main (eventer)-----------------------*/
+main {
+    max-width: 370px;
+    margin: 0 auto;
+    border: solid 10px rgba(0, 0, 0, 0);
+    color: rgb(71, 219, 175);
+}
+
+.eventIkon {
+    height: 2.3em;
+}
+
+.infoClass {
+    text-align: center;
+}
+
+p, h2 {
+    font-family: 'Fugaz One', cursive;
+}
+
+h2 {
+    color: rgb(71, 219, 175)
+}
+
+a {
+    font-family: 'Fugaz One', cursive;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(71, 219, 175);
+    border-radius: 4px;
+    max-width: 165px;
+    text-align: center;
+    transition: 2s;
+}
+
+a:hover {
+    transition: 500ms;
+    padding: 5px;
+}
+
+.bildeClass {
+    width: 10em;
+    border: 3px solid rgb(71, 219, 175);
+    border-radius: 4px;
+}
+
+/*---------------Footer-----------------*/
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: rgb(71, 219, 175);
+    margin-top: 40px;
+    padding: 30px;
+}
+
+footer h2 {
+    color: black;
+}
+
+footer section {
+    width: 40%;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+footer p, footer h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer a:hover {
+    font-size: 2rem;
+    color: white;
+}
+
+    /*Oisann, her lurte det seg inn en float :o */
+footer section img {
+    float: right;
+    margin-right: 40px;
+}
+
+/*-----------Skjermbredde 550px + -------------*/
+@media only screen and (min-width: 550px){
+    main {
+        max-width: none;
+    }
+    
+    article{
+        display: grid;
+        grid-template-columns: 185px;
+        grid-template-areas:
+            'header bilde'
+            'dato bilde'
+            'genre bilde'
+            'pris bilde'
+            'info bilde';
+    }
+
+    .bildeClass {
+        width: 100%;
+        max-width: 500px;
+        max-height: 300px;
+        align-self: center;
+        transition: all 2s;
+        margin-left: 5px;
+    }
+
+    .bildeClass:hover {
+        transform: rotate(-10deg);
+        max-width: 600px;
+    }
+}
+
+/*-----------------Skjermbredde 700px + -----------*/
+@media only screen and (min-width: 700px){
+    nav p {
+        display: none;
+    }
+    
+    nav a, main a {
+        background-color: none;
+    }
+
+    .skjultMeny , .skjultMeny p{
+        display: flex ;
+    }
+
+    .vistMeny , .vistMeny p{
+        display: flex ;
+    }
+
+    nav {
+        justify-content: space-evenly;
+        width: 40%;
+        max-width: 550px;
+        margin-left: 10%;
+    }
+
+    nav p {
+        flex-grow: 1;
+    }
+
+    a:hover{
+        padding: 0px;
+        font-size: 1.5em;
+        color: white;
+    }
+
+    article a {
+        background-color: rgb(71, 219, 175);
+        width: 100%;
+    }
+
+    article a:hover{
+        color: black;
+        font-size: 2em;
+    }
+}
+
+/*-------------------Skjermbredde 850px + -------------*/
+@media only screen and (min-width: 850px){
+    h1 {
+        font-size: 5em;
+    }
+
+    h1:hover {
+        font-size: 5em;
+    }
+
+    nav p{
+        font-size: 1.1rem;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    main article{
+        grid-template-columns: 200px 450px;
+        margin: 30px;
+    }
+
+    main article a {
+        font-size: 150%;
+    }
+}
